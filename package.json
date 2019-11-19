@@ -1,0 +1,19 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "力扣",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angleshe/leetcode.git"
+  },
+  "author": "angle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angleshe/leetcode/issues"
+  },
+  "homepage": "https://github.com/angleshe/leetcode#readme"
+}
