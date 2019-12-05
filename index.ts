@@ -1,3 +1,3 @@
-import {longestPalindrome} from './src/longestPalindrome'
+import {convert} from './src/convert'
 
-console.log(longestPalindrome('babad'))
+console.log(convert('a', 1))
