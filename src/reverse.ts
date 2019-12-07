@@ -6,20 +6,28 @@
  * @param {number} x 待处理数
  * @returns {number} 已处理数
  */
-export function reverse (x: number): number {
+export function reverse(x: number): number {
   let res: number = 0
-  if (x) {
-    let numArr = Math.abs(x).toString().split('')
-    for (let i: number = 0; i < Math.floor(numArr.length / 2); i++) {
-      [numArr[i], numArr[numArr.length - i - 1]] = [numArr[numArr.length - i - 1], numArr[i]]
-    }
-    res = parseInt(numArr.join(''), 10)
-    if (x < 0) {
-      res = -res
-    }
-    if (res > Math.pow(2, 31) - 1 || res < Math.pow(-2, 31)) {
-      res = 0
-    }
+  // if (x) {
+  //   let numArr = Math.abs(x).toString().split('')
+  //   for (let i: number = 0; i < Math.floor(numArr.length / 2); i++) {
+  //     [numArr[i], numArr[numArr.length - i - 1]] = [numArr[numArr.length - i - 1], numArr[i]]
+  //   }
+  //   res = parseInt(numArr.join(''), 10)
+  //   if (x < 0) {
+  //     res = -res
+  //   }
+  //   if (res > Math.pow(2, 31) - 1 || res < Math.pow(-2, 31)) {
+  //     res = 0
+  //   }
+  // }
+
+  while (x) {
+    res = x % 10 + res * 10
+    x = parseInt('' + x / 10)
+  }
+  if (res > Math.pow(2, 31) - 1 || res < Math.pow(-2, 31)) {
+    return 0
   }
   return res
 }
