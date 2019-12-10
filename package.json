@@ -6,7 +6,11 @@
   "scripts": {
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
-    "test": "jest"
+    "test": "jest",
+    "eslint": "eslint . --ext .js,.ts",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.ts",
+    "fix": "prettier --config --write src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -19,18 +23,44 @@
   },
   "homepage": "https://github.com/angleshe/leetcode#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.9",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "cz-customizable": "^6.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-ts": "^4.0.1",
+    "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "nodemon": "^1.19.4",
+    "prettier": "^1.19.1",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.{js,ts,tsx}": "npm run lint-staged:js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
     }
   }
 }
