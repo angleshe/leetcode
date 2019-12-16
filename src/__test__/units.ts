@@ -6,7 +6,8 @@
  * @param {string} type 类型名
  * @returns {boolean} 是否是指定类型的参数
  */
-function isType (param: any, type: string): boolean {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isType(param: any, type: string): boolean {
   return Object.prototype.toString.call(param) === `[object ${type}]`;
 }
 /**
@@ -17,7 +18,8 @@ function isType (param: any, type: string): boolean {
  * @param {*} param 测试参数
  * @returns {boolean} 是否为Array
  */
-export function isArray (param: any): boolean {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function isArray(param: any): boolean {
   return isType(param, 'Array');
 }
 
@@ -28,10 +30,11 @@ export function isArray (param: any): boolean {
  * @param {*} content
  * @returns {string}
  */
-export function showContent (content: any): string {
-  let res: string = ''
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function showContent(content: any): string {
+  let res: string = '';
   if (isArray(content)) {
-    res = JSON.stringify(content)
+    res = JSON.stringify(content);
   }
-  return res
+  return res;
 }
