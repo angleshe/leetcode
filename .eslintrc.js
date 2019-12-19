@@ -7,6 +7,16 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/interface-name-prefix': [
+      'error',
+      { prefixWithI: 'always', allowUnderscorePrefix: true }
+    ],
+    '@typescript-eslint/class-name-casing': [
+      'error',
+      {
+        allowUnderscorePrefix: true
+      }
+    ],
     'comma-dangle': ['error', 'never']
   }
 };
