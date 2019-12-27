@@ -1,5 +1,5 @@
 import { maxArea } from '../maxArea';
-import { showContent } from './units';
+import { showContent } from '../utils';
 import assert from 'assert';
 describe('src/maxArea', () => {
   describe('maxArea()', () => {

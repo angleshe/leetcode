@@ -1,5 +1,5 @@
 import { removeNthFromEnd, createList, showListNode, IListNode } from '../removeNthFromEnd';
-import { showContent } from './units';
+import { showContent } from '../utils';
 import assert from 'assert';
 describe('src/removeNthFromEnd', () => {
   describe('showListNode', () => {

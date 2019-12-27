@@ -1,4 +1,4 @@
-import { showContent } from './units';
+import { showContent } from '../utils';
 import assert from 'assert';
 import { threeSum } from '../threeSum';
 describe('src/threeSum', () => {

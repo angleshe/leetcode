@@ -1,5 +1,5 @@
 import { longestCommonPrefix, isCommonPrefix, getMinLengthForIndex } from '../longestCommonPrefix';
-import { showContent } from './units';
+import { showContent } from '../utils';
 import assert from 'assert';
 describe('src/longestCommonPrefix', () => {
   describe('longestCommonPrefix', () => {
