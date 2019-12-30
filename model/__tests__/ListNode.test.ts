@@ -12,4 +12,15 @@ describe('model/ListNode', () => {
       assert.strictEqual('1->2->3', testList.toString());
     });
   });
+  describe('ListNode.createList', () => {
+    it('', () => {
+      assert.strictEqual(undefined, ListNode.createList(''));
+    });
+    it('1', () => {
+      assert.strictEqual(JSON.stringify(ListNode.createList('1')), JSON.stringify(new ListNode(1)));
+    });
+    it('1->2->3', () => {
+      assert.strictEqual(JSON.stringify(ListNode.createList('1->2->3')), JSON.stringify(testList));
+    });
+  });
 });
