@@ -5,7 +5,7 @@
  * @export
  * @param {number[]} candidates 参考数组
  * @param {number} target 目标值
- * @param {number[]} path 但前路径
+ * @param {number[]} path 当前路径
  * @param {number[][]} res 结果集
  */
 export function dfs(candidates: number[], target: number, path: number[], res: number[][]): void {
