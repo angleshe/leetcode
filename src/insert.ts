@@ -1,3 +1,12 @@
+/**
+ * @description 给出一个无重叠的 ，按照区间起始端点排序的区间列表。
+ * @author angle
+ * @date 2020-05-29
+ * @export
+ * @param {number[][]} intervals 无重叠的区间集
+ * @param {number[]} newInterval 插入的区间
+ * @returns {number[][]} 处理后的区间集
+ */
 export function insert(intervals: number[][], newInterval: number[]): number[][] {
   let minIndex: number = intervals.length;
   let maxIndex: number = -1;
