@@ -1,3 +1,12 @@
+/**
+ * @description 返回1-n组成n位数从小到大排列第k个值
+ * @author angle
+ * @date 2020-06-02
+ * @export
+ * @param {number} n
+ * @param {number} k
+ * @returns {string} 第k个值
+ */
 export function getPermutation(n: number, k: number): string {
   k--;
   const path: number[] = [];
