@@ -17,6 +17,7 @@ module.exports = {
         allowUnderscorePrefix: true
       }
     ],
+    '@typescript-eslint/no-non-null-assertion': 'off',
     'comma-dangle': ['error', 'never']
   }
 };
