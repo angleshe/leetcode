@@ -5,7 +5,7 @@
  * @export
  * @class ListNode
  */
-export class ListNode<T> {
+export class ListNode<T = number> {
   /**
    * @description 链表值
    * @type {T}
