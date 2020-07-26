@@ -48,13 +48,13 @@ export class TreeNode<T = number> {
       if (list[0].left) {
         list.push(list[0].left);
         res.push(list[0].left.val);
-      } else if (list[0].right) {
+      } else {
         res.push(null);
       }
       if (list[0].right) {
         list.push(list[0].right);
         res.push(list[0].right.val);
-      } else if (list[0].left) {
+      } else {
         res.push(null);
       }
       list.splice(0, 1);

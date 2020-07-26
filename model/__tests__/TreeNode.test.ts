@@ -28,5 +28,15 @@ describe('model/TreeNode', () => {
         2
       ]);
     });
+    it('[3,1,4,null,null,2]', () => {
+      assert.deepStrictEqual(TreeNode.createdNumberTree([3, 1, 4, null, null, 2])!.toString(), [
+        3,
+        1,
+        4,
+        null,
+        null,
+        2
+      ]);
+    });
   });
 });
