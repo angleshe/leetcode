@@ -32,9 +32,15 @@ export class ListNode<T = number> {
     let res: string = '' + this.val;
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     let pos: ListNode<T> = this;
+    const cache: Map<ListNode<T>, number> = new Map<ListNode<T>, number>([[this, 0]]);
+    let index: number = 1;
     while (pos.next !== null) {
+      if (cache.has(pos.next)) {
+        return `${res}↩︎${cache.get(pos.next)}`;
+      }
       res += `->${pos.next.val}`;
       pos = pos.next;
+      cache.set(pos, index++);
     }
     return res;
   }
@@ -63,5 +69,22 @@ export class ListNode<T = number> {
       }
     });
     return res;
+  }
+  public static createdCycleList(data: number[], nextIndex: number): ListNode | null {
+    if (data.length === 0) {
+      return null;
+    }
+    const listNodeArr: ListNode[] = [];
+    data.forEach((item, index) => {
+      const node: ListNode = new ListNode(item);
+      if (index !== 0) {
+        listNodeArr[index - 1].next = node;
+      }
+      listNodeArr.push(node);
+    });
+    if (nextIndex !== -1) {
+      listNodeArr[listNodeArr.length - 1].next = listNodeArr[nextIndex];
+    }
+    return listNodeArr[0];
   }
 }

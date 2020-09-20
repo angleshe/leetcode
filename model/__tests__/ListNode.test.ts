@@ -22,5 +22,14 @@ describe('model/ListNode', () => {
     it('1->2->3', () => {
       assert.strictEqual(JSON.stringify(ListNode.createList('1->2->3')), JSON.stringify(testList));
     });
+    it('1->2↩︎0', () => {
+      assert.strictEqual(ListNode.createdCycleList([1, 2], 0)?.toString(), '1->2↩︎0');
+    });
+    it('3->2->0->-4↩︎1', () => {
+      assert.strictEqual(ListNode.createdCycleList([3, 2, 0, -4], 1)?.toString(), '3->2->0->-4↩︎1');
+    });
+    it('1', () => {
+      assert.strictEqual(ListNode.createdCycleList([1], -1)?.toString(), '1');
+    });
   });
 });
