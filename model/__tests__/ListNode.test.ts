@@ -32,4 +32,9 @@ describe('model/ListNode', () => {
       assert.strictEqual(ListNode.createdCycleList([1], -1)?.toString(), '1');
     });
   });
+  describe('ListNode.getNode', () => {
+    it('3->2->0->-4↩︎1, 6', () => {
+      assert.strictEqual(ListNode.createdCycleList([3, 2, 0, -4], 1)?.getNode(6)!.val, -4);
+    });
+  });
 });

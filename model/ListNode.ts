@@ -87,4 +87,17 @@ export class ListNode<T = number> {
     }
     return listNodeArr[0];
   }
+
+  public getNode(index: number): ListNode<T> | null {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    let res: ListNode<T> = this;
+    for (let i: number = 0; i < index; i++) {
+      if (res.next) {
+        res = res.next;
+      } else {
+        return null;
+      }
+    }
+    return res;
+  }
 }
