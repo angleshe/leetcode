@@ -88,6 +88,27 @@ export class ListNode<T = number> {
     return listNodeArr[0];
   }
 
+  public static createdIntersectionLists(
+    list1: string,
+    list2: string,
+    intersection: string
+  ): [ListNode, ListNode] {
+    const listNode1: ListNode = ListNode.createList(list1)!;
+    const listNode2: ListNode = ListNode.createList(list2)!;
+    const intersectionList: ListNode = ListNode.createList(intersection)!;
+    let head: ListNode = listNode1;
+    while (head.next) {
+      head = head.next;
+    }
+    head.next = intersectionList;
+    head = listNode2;
+    while (head.next) {
+      head = head.next;
+    }
+    head.next = intersectionList;
+    return [listNode1, listNode2];
+  }
+
   public getNode(index: number): ListNode<T> | null {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     let res: ListNode<T> = this;
