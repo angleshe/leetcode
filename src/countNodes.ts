@@ -8,16 +8,12 @@ import { TreeNode } from '../model/TreeNode';
  * @returns {number}
  */
 function countLevel(root: TreeNode | null): number {
-  if (root) {
-    let res: number = 1;
-    let target: TreeNode = root;
-    while (target.left) {
-      res++;
-      target = target.left;
-    }
-    return res;
+  let res: number = 0;
+  while (root) {
+    res++;
+    root = root.left;
   }
-  return 0;
+  return res;
 }
 /**
  * @description 求出完全二叉树的节点个数
@@ -33,10 +29,10 @@ export function countNodes(root: TreeNode | null): number {
     const right: number = countLevel(root.right);
     if (left === right) {
       // eslint-disable-next-line no-bitwise
-      return countLevel(root.left) + (1 << left);
+      return countNodes(root.right) + (1 << left);
     }
     // eslint-disable-next-line no-bitwise
-    return countLevel(root.right) + (1 << right);
+    return countNodes(root.left) + (1 << right);
   }
   return 0;
 }
