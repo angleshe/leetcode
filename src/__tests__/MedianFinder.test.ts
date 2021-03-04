@@ -1,0 +1,50 @@
+import assert from 'power-assert';
+import { MedianFinder } from '../MedianFinder';
+
+describe('src/MedianFinder', () => {
+  describe('MedianFinder', () => {
+    const medianFinder1 = new MedianFinder();
+    medianFinder1.addNum(1);
+    medianFinder1.addNum(2);
+    const test1 = medianFinder1.findMedian();
+    medianFinder1.addNum(3);
+    const test2 = medianFinder1.findMedian();
+    const medianFinder2 = new MedianFinder();
+    medianFinder2.addNum(6);
+    const medianFinder2test1 = medianFinder2.findMedian();
+    medianFinder2.addNum(10);
+    const medianFinder2test2 = medianFinder2.findMedian();
+    medianFinder2.addNum(2);
+    const medianFinder2test3 = medianFinder2.findMedian();
+    medianFinder2.addNum(6);
+    const medianFinder2test4 = medianFinder2.findMedian();
+    medianFinder2.addNum(5);
+    const medianFinder2test5 = medianFinder2.findMedian();
+    medianFinder2.addNum(0);
+    const medianFinder2test6 = medianFinder2.findMedian();
+    medianFinder2.addNum(6);
+    const medianFinder2test7 = medianFinder2.findMedian();
+    medianFinder2.addNum(3);
+    const medianFinder2test8 = medianFinder2.findMedian();
+    medianFinder2.addNum(1);
+    const medianFinder2test9 = medianFinder2.findMedian();
+    medianFinder2.addNum(0);
+    const medianFinder2test10 = medianFinder2.findMedian();
+    medianFinder2.addNum(0);
+    const medianFinder2test11 = medianFinder2.findMedian();
+
+    it('medianFinder1 1', () => assert.strictEqual(test1, 1.5));
+    it('medianFinder1 2', () => assert.strictEqual(test2, 2));
+    it('medianFinder2 test1', () => assert.strictEqual(medianFinder2test1, 6));
+    it('medianFinder2 test2', () => assert.strictEqual(medianFinder2test2, 8));
+    it('medianFinder2 test3', () => assert.strictEqual(medianFinder2test3, 6));
+    it('medianFinder2 test4', () => assert.strictEqual(medianFinder2test4, 6));
+    it('medianFinder2 test5', () => assert.strictEqual(medianFinder2test5, 6));
+    it('medianFinder2 test6', () => assert.strictEqual(medianFinder2test6, 5.5));
+    it('medianFinder2 test7', () => assert.strictEqual(medianFinder2test7, 6));
+    it('medianFinder2 test8', () => assert.strictEqual(medianFinder2test8, 5.5));
+    it('medianFinder2 test9', () => assert.strictEqual(medianFinder2test9, 5));
+    it('medianFinder2 test10', () => assert.strictEqual(medianFinder2test10, 4));
+    it('medianFinder2 test11', () => assert.strictEqual(medianFinder2test11, 3));
+  });
+});
