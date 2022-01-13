@@ -10,7 +10,8 @@
     "eslint": "eslint . --ext .js,.ts",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.ts",
-    "fix": "prettier --config --write src/index.ts"
+    "fix": "prettier --config --write src/index.ts",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
     "@types/power-assert": "^1.5.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
-    "cz-conventional-changelog": "^3.0.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^6.2.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
