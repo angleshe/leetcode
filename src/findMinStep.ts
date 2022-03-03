@@ -51,6 +51,15 @@ function dfs(board: string, hand: string, sign: number, cache: Map<string, numbe
   }
   return 0;
 }
+/**
+ * @description 祖玛游戏
+ * @author angle
+ * @date 2022-03-03
+ * @export
+ * @param {string} board
+ * @param {string} hand
+ * @returns {number}
+ */
 export function findMinStep(board: string, hand: string): number {
   const res = dfs(board, hand, 0, new Map<string, number>());
   return res === Infinity ? -1 : res;
