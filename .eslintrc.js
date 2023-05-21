@@ -18,6 +18,8 @@ module.exports = {
       }
     ],
     '@typescript-eslint/no-non-null-assertion': 'off',
-    'comma-dangle': ['error', 'never']
+    '@typescript-eslint/no-use-before-define': 'off',
+    'comma-dangle': ['error', 'never'],
+    'no-bitwise': 'off'
   }
 };
